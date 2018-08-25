@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Soccer Prediction Analysis</title>
+  <style type="text/css">
+    button,
+    div,
+    form,
+    input {
+      margin: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+
+	  <script>
+      $( document ).ready(function() {
+        console.log( "ready!" );
+        docready();
+      });
+	  </script>
+</head>
+
+<body>
+    <div class="container">
+      <div class="jumbotron">           
+        <h1>USWNT Takes on the World Cup</h1>
+      </div>
+      <div class="row">
+          <div class="col-med-2"></div>
+          <div class="col-med-4">
+            <form id="stats-form">
+            <!--"Shots","Assists","fwPass.Comp.Pct","Cross.Comp.Pct", "Big.Chances", "AD.Win.Pct"-->
+                <label for="shots-input">Shots</label>
+                <input name="Shots" type="text" name="shots-input" id="shots-input"><br>
+
+                <label for="Assists">Assists</label>
+                <input name="assists" type="text" name="assists" id="assists"><br>
+
+                <label for="fwPass.Comp.Pct">Forward Pass Completion Percentage</label>
+                <input type="text" name="fwPass.Comp.Pct" id="fwPass.Comp.Pct"><br>
+
+                <label for="Cross.Comp.Pct">Cross Completion Percentage</label>
+                <input type="text" name="Cross.Comp.Pct" id="Cross.Comp.Pct"><br>
+
+                <label for="Big.Chances">Big Chances</label>
+                <input type="text" name="Big.Chances" id="Big.Chances"><br>
+
+                <label for="AD.Win.Pct">Aerial Duel Win Percentage</label>
+                <input type="text" name="AD.Win.Pct" id="AD.Win.Pct"><br>
+                <!-- Button triggers stats to be analyzed -->
+              <!--<input id="pass-stats" type="submit" value="See Your Chances">-->
+              </form>
+
+              <input id="get-results" type="submit" value="Predict Game">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-med-2"></div>
+          <div class="col-med-4">
+              <table id="my_table">
+              </table>
+          </div>
+        </div>
+    </div>
+</body>
+
+</html>
